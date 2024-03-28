@@ -1,5 +1,5 @@
 .main-news {
-  background-color: blue;
+  background-color: rgb(170, 170, 189);
   width: 90%;
   min-height: 90vh;
   padding: 20px;
@@ -11,7 +11,7 @@
 }
 
 .input-search-container h1 {
-  background-color: skyblue;
+  background-color: rgb(106, 165, 129);
   font-size: 30px;
   width: 100%;
   text-align: center;
@@ -44,7 +44,7 @@
 }
 
 .scroll {
-  color: rgb(165, 45, 67);
+  color: rgb(234, 27, 27);
   font-size: 20px;
   font-family: Arial, Helvetica, sans-serif;
 }

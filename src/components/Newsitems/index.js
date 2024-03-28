@@ -1,9 +1,10 @@
 import React from "react";
+import './index.css'
 
 const Newsitems = (props) => {
 
     const {article}= props
-    
+
   return (
     <li className="News-item">
       <img className="image" src={article.urlToImage} alt="img" />
