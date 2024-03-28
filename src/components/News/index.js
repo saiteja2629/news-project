@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./index.css";
+import Newsitems from "../Newsitems";
 
 const News = () => {
   const [search, setSearch] = useState("");
@@ -61,20 +62,12 @@ const News = () => {
       </div>
 
       <ul>
-        {newsData?.map((article) => {
-          return (
-            <li className="News-item">
-              <img className="image" src={article.urlToImage} alt="img" />
-              <div className="news-details">
-                <h3>{article.title}</h3>
-                <p>{article.description}</p>
-                <a href={article.url}> Read more</a>
-                <h3>{article.source.name}</h3>
-                <p> Author:{article.author}</p>
-              </div>
-            </li>
-          );
-        })}
+        {newsData?.map((article) =>
+        (<Newsitems article= {article} />)
+        
+        ) }
+        
+        
       </ul>
     </div>
   );
