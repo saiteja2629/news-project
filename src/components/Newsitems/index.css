@@ -1,4 +1,15 @@
 
+.News-item {
+    list-style-type: none;
+    width: 300px;
+    height: 400px;
+    overflow-y: auto;
+    background-color: brown;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    
+  }
+
 .News-item h3{
     color: rgb(180, 186, 167);
     font-family:Arial, Helvetica, sans-serif;
