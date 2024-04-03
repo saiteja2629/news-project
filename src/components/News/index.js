@@ -5,9 +5,12 @@ import Newsitems from "../Newsitems";
 const News = () => {
   const [search, setSearch] = useState("");
 
+  const [load, setLoad] = useState(false);
+
   const [newsData, setNewsData] = useState(null);
 
   const fetchNewsData = async (param) => {
+    setLoad(true);
     try {
       const response = await fetch(
         `https://newsapi.org/v2/everything?q=${param}&apiKey=50d7788ad43c41acac8a48eb64158c2a`
@@ -16,6 +19,7 @@ const News = () => {
       const data = await response.json();
 
       if (data) {
+        setLoad(false);
         setNewsData(data.articles);
       }
     } catch (err) {
@@ -54,21 +58,16 @@ const News = () => {
       </marquee>
 
       <div>
-        <img
-          className="image2"
-          src="https://cdn.pixabay.com/photo/2016/02/01/00/56/news-1172463_640.jpg"
-          alt="img"
-        ></img>
+        {load ? (
+          <>Loading...</>
+        ) : (
+          <ul>
+            {newsData?.map((article) => (
+              <Newsitems article={article} />
+            ))}
+          </ul>
+        )}
       </div>
-
-      <ul>
-        {newsData?.map((article) =>
-        (<Newsitems article= {article} />)
-        
-        ) }
-        
-        
-      </ul>
     </div>
   );
 };

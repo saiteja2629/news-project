@@ -3,6 +3,7 @@
   width: 90%;
   min-height: 90vh;
   padding: 20px;
+  border-radius: 10px;
 }
 .input-search-container {
   display: flex;
